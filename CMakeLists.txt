@@ -1,11 +1,12 @@
-# CMakeLists.txt for BDS_SOVE module
+# CMakeLists.txt for BDS_RTK module
 # 代码作者：ClancyShang
-# 最后修改时间：2026-01-16
+# 最后修改时间：2026-01-20
 
-# 添加可执行文件
-add_executable(bds_sove bds_sove.c)
-add_executable(bds_sove_test bds_sove_test.c)
+# 设置全局输出目录
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/../../output/bin")
 
-# 链接必要的库
-target_link_libraries(bds_sove m)
-target_link_libraries(bds_sove_test m)
+# 包含子目录
+add_subdirectory(BDS_BASE)
+add_subdirectory(BDS_SOVE)
+add_subdirectory(MQTT)
+
